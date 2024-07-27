@@ -1,7 +1,7 @@
 {
-  "name": "npm-webpack-template",
+  "name": "odin-user-interface-components",
   "version": "1.0.0",
-  "description": "A template for new projects using NPM and Webpack",
+  "description": "A collection of custom user interface components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Not implemented\"",
@@ -14,7 +14,9 @@
   "author": "Matthew Burgess",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.8.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.8.0",
     "globals": "^15.8.0",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^4.0.0",
