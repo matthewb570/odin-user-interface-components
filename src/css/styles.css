@@ -1,68 +1,68 @@
 :root {
-    --standard-box-shadow: rgb(156, 156, 156) 1px 1px 5px;
-    --hover-accent-color: lightgray;
+  --standard-box-shadow: rgb(156, 156, 156) 1px 1px 5px;
+  --hover-accent-color: lightgray;
 
-    --menu-icon: url('../images/menu.svg');
+  --menu-icon: url("../images/menu.svg");
 
-    --dropdown-toggle-dimensions: 40px;
-    --dropdown-border-radius: 10px;
+  --dropdown-toggle-dimensions: 40px;
+  --dropdown-border-radius: 10px;
 }
 
 .dropdown {
-    position: relative;
-    width: var(--dropdown-toggle-dimensions);
+  position: relative;
+  width: var(--dropdown-toggle-dimensions);
 }
 
 .dropdown-toggle {
-    appearance: none;
-    
-    border: none;
-    height: var(--dropdown-toggle-dimensions);
-    width: var(--dropdown-toggle-dimensions);
-    border-radius: var(--dropdown-border-radius);
+  appearance: none;
 
-    background-image: var(--menu-icon);
-    background-color: white;
+  border: none;
+  height: var(--dropdown-toggle-dimensions);
+  width: var(--dropdown-toggle-dimensions);
+  border-radius: var(--dropdown-border-radius);
 
-    cursor: pointer;
+  background-image: var(--menu-icon);
+  background-color: white;
+
+  cursor: pointer;
 }
 
 .dropdown-toggle:hover {
-    background-color: var(--hover-accent-color);
+  background-color: var(--hover-accent-color);
 }
 
 .dropdown-toggle.on {
-    background-color: gray;
+  background-color: gray;
 }
 
 .dropdown-menu {
-    box-shadow: var(--standard-box-shadow);
-    border-radius: var(--dropdown-border-radius);
+  box-shadow: var(--standard-box-shadow);
+  border-radius: var(--dropdown-border-radius);
 
-    position: absolute;
-    top: calc(var(--dropdown-toggle-dimensions) + 10px);
-    width: max-content;
-    min-width: 200px;
-    max-width: 34vw;
+  position: absolute;
+  top: calc(var(--dropdown-toggle-dimensions) + 10px);
+  width: max-content;
+  min-width: 200px;
+  max-width: 34vw;
 
-    background-color: white;
+  background-color: white;
 }
 
 .dropdown-menu.align-right {
-    right: 0;
+  right: 0;
 }
 
-.dropdown-menu-item {    
-    padding: 15px;
-    border-radius: var(--dropdown-border-radius);
+.dropdown-menu-item {
+  padding: 15px;
+  border-radius: var(--dropdown-border-radius);
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdown-menu-item:hover {
-    background-color: var(--hover-accent-color);
+  background-color: var(--hover-accent-color);
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
