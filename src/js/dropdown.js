@@ -1,7 +1,9 @@
 class Dropdown {
-  menuOptions;
+  alignment;
+    menuOptions;
 
-  constructor(...menuOptions) {
+  constructor(alignment = "left", ...menuOptions) {
+    this.alignment = alignment;
     this.menuOptions = menuOptions;
   }
 
@@ -41,6 +43,11 @@ class Dropdown {
     const divDropdownMenu = document.createElement("div");
     divDropdownMenu.classList.add("dropdown-menu");
     divDropdownMenu.classList.add("hidden");
+    if (this.alignment === 'right') {
+        divDropdownMenu.classList.add('align-right');
+    } else {
+        divDropdownMenu.classList.add('align-left');
+    }
     divDropdownMenu.appendChild(divDropDownMenuItems);
 
     return divDropdownMenu;
