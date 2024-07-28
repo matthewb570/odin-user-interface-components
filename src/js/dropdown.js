@@ -53,10 +53,11 @@ class Dropdown {
     return divDropdownMenu;
   }
 
-  createDropdownMenuItem(text) {
+  createDropdownMenuItem(menuOption) {
     const divDropdownMenuItem = document.createElement("div");
     divDropdownMenuItem.classList.add("dropdown-menu-item");
-    divDropdownMenuItem.textContent = text;
+    divDropdownMenuItem.textContent = menuOption.text;
+    divDropdownMenuItem.onclick = menuOption.action;
 
     return divDropdownMenuItem;
   }
