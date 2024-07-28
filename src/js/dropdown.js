@@ -7,8 +7,8 @@ class Dropdown {
 
   createDropdown() {
     const divDropdownMenu = this.createDropdownMenu();
-    const divDropdownToggle = this.createDropdownToggle(
-      () => (divDropdownMenu.hidden = !divDropdownMenu.hidden)
+    const divDropdownToggle = this.createDropdownToggle(() =>
+      divDropdownMenu.classList.toggle("hidden")
     );
 
     const divDropdown = document.createElement("div");
@@ -23,19 +23,25 @@ class Dropdown {
     const btnDropdownToggle = document.createElement("button");
     btnDropdownToggle.type = "button";
     btnDropdownToggle.classList.add("dropdown-toggle");
-    btnDropdownToggle.onclick = toggleFunction;
-    btnDropdownToggle.textContent = "Menu";
+    btnDropdownToggle.onclick = () => {
+      toggleFunction();
+      btnDropdownToggle.classList.toggle("on");
+    };
 
     return btnDropdownToggle;
   }
 
   createDropdownMenu() {
+    const divDropDownMenuItems = document.createElement("div");
+    divDropDownMenuItems.classList.add("dropdown-menu-items");
+    this.menuOptions.forEach((menuOption) =>
+      divDropDownMenuItems.appendChild(this.createDropdownMenuItem(menuOption))
+    );
+
     const divDropdownMenu = document.createElement("div");
     divDropdownMenu.classList.add("dropdown-menu");
-    divDropdownMenu.hidden = true;
-    this.menuOptions.forEach((menuOption) =>
-      divDropdownMenu.appendChild(this.createDropdownMenuItem(menuOption))
-    );
+    divDropdownMenu.classList.add("hidden");
+    divDropdownMenu.appendChild(divDropDownMenuItems);
 
     return divDropdownMenu;
   }
