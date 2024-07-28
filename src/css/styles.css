@@ -46,6 +46,7 @@
   max-width: 34vw;
 
   background-color: white;
+  z-index: 1;
 }
 
 .dropdown-menu.align-right {
