@@ -6,7 +6,11 @@ class ImageCarousel {
     }
 
     createImageCarousel() {
-        return this.createFrame();
+        const divImageCarousel = document.createElement('div');
+        divImageCarousel.classList.add('image-carousel');
+        divImageCarousel.appendChild(this.createFrame());
+
+        return divImageCarousel;
     }
 
     createFrame() {

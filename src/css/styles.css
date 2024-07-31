@@ -67,3 +67,26 @@
 .hidden {
   display: none;
 }
+
+.carousel-frame {
+    position: relative;
+
+    border: solid;
+    height: 300px;
+    width: 600px;
+    overflow: hidden;
+}
+
+.carousel-slide-collection {
+    display: flex;
+
+    position: relative;
+    /* TODO: Set this programmatically when clicking the nav buttons */
+    /* left: -600px; */
+}
+
+.carousel-slide {
+    flex: 1 0 600px;
+
+    height: 300px;
+}
