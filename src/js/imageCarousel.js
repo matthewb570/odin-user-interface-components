@@ -1,8 +1,16 @@
+const SLIDE_WIDTH = 600;
+
 class ImageCarousel {
+
     images;
+    currentSlidePosition;
+
+    divSlideCollection;
     
     constructor(...images) {
         this.images = images;
+        this.currentSlidePosition = 0;
+        this.divSlideCollection = this.createSlideCollection();
     }
 
     createImageCarousel() {
@@ -16,7 +24,7 @@ class ImageCarousel {
     createFrame() {
         const divFrame = document.createElement('div');
         divFrame.classList.add('carousel-frame');
-        divFrame.appendChild(this.createSlideCollection());
+        divFrame.appendChild(this.divSlideCollection);
 
         return divFrame;
     }
@@ -25,6 +33,7 @@ class ImageCarousel {
         const divSlideCollection = document.createElement('div');
         divSlideCollection.classList.add('carousel-slide-collection');
         this.images.forEach((image) => divSlideCollection.appendChild(this.createSlide(image)));
+        divSlideCollection.style.left = `${this.currentSlidePosition}px`
 
         return divSlideCollection;
     }
@@ -43,6 +52,20 @@ class ImageCarousel {
 
     createNavigationDots() {
         // TODO: Add this
+    }
+
+    displayNextSlide() {
+        if (this.currentSlidePosition > -((this.images.length - 1) * SLIDE_WIDTH)) {
+            this.currentSlidePosition -= SLIDE_WIDTH;
+            this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        }
+    }
+
+    displayPreviousSlide() {
+        if (this.currentSlidePosition < 0) {
+            this.currentSlidePosition += SLIDE_WIDTH;
+            this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        }
     }
 }
 
