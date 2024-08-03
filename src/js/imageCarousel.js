@@ -25,6 +25,8 @@ class ImageCarousel {
         const divFrame = document.createElement('div');
         divFrame.classList.add('carousel-frame');
         divFrame.appendChild(this.divSlideCollection);
+        divFrame.appendChild(this.createPreviousSlideButton());
+        divFrame.appendChild(this.createNextSlideButton());
 
         return divFrame;
     }
@@ -46,8 +48,24 @@ class ImageCarousel {
         return imgSlide;
     }
 
-    createButtons() {
-        // TODO: Add this
+    createPreviousSlideButton() {
+        const btnPreviousSlide = document.createElement('button');
+        btnPreviousSlide.type = 'button';
+        btnPreviousSlide.classList.add('icon', 'back');
+        btnPreviousSlide.textContent = 'Back'; // TODO: Remove this
+        btnPreviousSlide.onclick = this.displayPreviousSlide.bind(this);
+
+        return btnPreviousSlide;
+    }
+
+    createNextSlideButton() {
+        const btnNextSlide = document.createElement('button');
+        btnNextSlide.type = 'button';
+        btnNextSlide.classList.add('icon', 'next');
+        btnNextSlide.textContent = 'Next'; // TODO: Remove this
+        btnNextSlide.onclick = this.displayNextSlide.bind(this);
+
+        return btnNextSlide;
     }
 
     createNavigationDots() {
