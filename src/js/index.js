@@ -21,3 +21,4 @@ document.body.appendChild(dropdown.createDropdown());
 const imageCarousel = new ImageCarousel('Frame 1', 'Frame 2', 'Frame 3');
 
 document.body.appendChild(imageCarousel.createImageCarousel());
+setInterval(() => imageCarousel.displayNextSlide(), 5000);
