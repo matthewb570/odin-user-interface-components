@@ -91,7 +91,6 @@ class ImageCarousel {
         const divNavDot = document.createElement('div');
         divNavDot.classList.add('carousel-nav-dot');
         divNavDot.onclick = () => this.jumpToSlide(jumpPosition);
-        divNavDot.textContent = jumpPosition; // TODO: Remove this
 
         return divNavDot;
     }

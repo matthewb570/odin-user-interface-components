@@ -94,9 +94,10 @@
     align-items: center;
 
     position: absolute;
-    top: 0;
-    height: 300px;
-    width: 600px;
+    top: 5px;
+    left: 5px;
+    height: 290px;
+    width: 590px;
 }
 
 .carousel-nav-dot-collection {
@@ -106,4 +107,19 @@
     display: flex;
     justify-content: center;
     gap: 5px;
+}
+
+.carousel-nav-dot {
+    box-sizing: border-box;
+    height: 17px;
+    width: 17px;
+    border-radius: 10px;
+    border: solid 2px;
+    padding: 2px;
+    background-clip: content-box;
+}
+
+.carousel-nav-dot.selected {
+    background-color: green;
+    /* TODO: Programmatically toggle this class */
 }
