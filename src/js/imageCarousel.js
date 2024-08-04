@@ -25,9 +25,7 @@ class ImageCarousel {
         const divFrame = document.createElement('div');
         divFrame.classList.add('carousel-frame');
         divFrame.appendChild(this.divSlideCollection);
-        divFrame.appendChild(this.createPreviousSlideButton());
-        divFrame.appendChild(this.createNextSlideButton());
-        divFrame.appendChild(this.createNavigationDots());
+        divFrame.appendChild(this.createButtonControls());
 
         return divFrame;
     }
@@ -47,6 +45,16 @@ class ImageCarousel {
         imgSlide.textContent = image;
 
         return imgSlide;
+    }
+
+    createButtonControls() {
+        const divButtonControls = document.createElement('div');
+        divButtonControls.classList.add('carousel-button-controls');
+        divButtonControls.appendChild(this.createPreviousSlideButton());
+        divButtonControls.appendChild(this.createNavigationDots());
+        divButtonControls.appendChild(this.createNextSlideButton());
+
+        return divButtonControls;
     }
 
     createPreviousSlideButton() {
@@ -71,7 +79,7 @@ class ImageCarousel {
 
     createNavigationDots() {
         const divNavDotCollection = document.createElement('div');
-        divNavDotCollection.classList.add('nav-dot-collection');
+        divNavDotCollection.classList.add('carousel-nav-dot-collection');
         for (let i = 0; i < this.images.length; i++) {
             divNavDotCollection.appendChild(this.createNavigationDot(i * -SLIDE_WIDTH));
         }
@@ -81,7 +89,7 @@ class ImageCarousel {
 
     createNavigationDot(jumpPosition) {
         const divNavDot = document.createElement('div');
-        divNavDot.classList.add('nav-dot');
+        divNavDot.classList.add('carousel-nav-dot');
         divNavDot.onclick = () => this.jumpToSlide(jumpPosition);
         divNavDot.textContent = jumpPosition; // TODO: Remove this
 

@@ -81,12 +81,29 @@
     display: flex;
 
     position: relative;
-    /* TODO: Set this programmatically when clicking the nav buttons */
-    /* left: -600px; */
 }
 
 .carousel-slide {
     flex: 1 0 600px;
 
     height: 300px;
+}
+
+.carousel-button-controls {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    height: 300px;
+    width: 600px;
+}
+
+.carousel-nav-dot-collection {
+    flex: 1;
+    align-self: flex-end;
+
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
