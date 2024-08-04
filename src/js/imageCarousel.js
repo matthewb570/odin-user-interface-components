@@ -91,15 +91,19 @@ class ImageCarousel {
     displayNextSlide() {
         if (this.currentSlidePosition > -((this.images.length - 1) * SLIDE_WIDTH)) {
             this.currentSlidePosition -= SLIDE_WIDTH;
-            this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        } else {
+            this.currentSlidePosition = 0;
         }
+        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
     }
 
     displayPreviousSlide() {
         if (this.currentSlidePosition < 0) {
             this.currentSlidePosition += SLIDE_WIDTH;
-            this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        } else {
+            this.currentSlidePosition = -((this.images.length - 1) * SLIDE_WIDTH)
         }
+        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
     }
 
     jumpToSlide(position) {
