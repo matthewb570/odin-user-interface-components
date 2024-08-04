@@ -27,6 +27,7 @@ class ImageCarousel {
         divFrame.appendChild(this.divSlideCollection);
         divFrame.appendChild(this.createPreviousSlideButton());
         divFrame.appendChild(this.createNextSlideButton());
+        divFrame.appendChild(this.createNavigationDots());
 
         return divFrame;
     }
@@ -69,7 +70,22 @@ class ImageCarousel {
     }
 
     createNavigationDots() {
-        // TODO: Add this
+        const divNavDotCollection = document.createElement('div');
+        divNavDotCollection.classList.add('nav-dot-collection');
+        for (let i = 0; i < this.images.length; i++) {
+            divNavDotCollection.appendChild(this.createNavigationDot(i * -SLIDE_WIDTH));
+        }
+        
+        return divNavDotCollection;
+    }
+
+    createNavigationDot(jumpPosition) {
+        const divNavDot = document.createElement('div');
+        divNavDot.classList.add('nav-dot');
+        divNavDot.onclick = () => this.jumpToSlide(jumpPosition);
+        divNavDot.textContent = jumpPosition; // TODO: Remove this
+
+        return divNavDot;
     }
 
     displayNextSlide() {
@@ -84,6 +100,12 @@ class ImageCarousel {
             this.currentSlidePosition += SLIDE_WIDTH;
             this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
         }
+    }
+
+    jumpToSlide(position) {
+        console.log(position);
+        this.currentSlidePosition = position;
+        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
     }
 }
 
