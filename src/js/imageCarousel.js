@@ -3,13 +3,13 @@ const SLIDE_WIDTH = 600;
 class ImageCarousel {
 
     images;
-    currentSlidePosition;
+    currentSlideIndex;
 
     divSlideCollection;
     
     constructor(...images) {
         this.images = images;
-        this.currentSlidePosition = 0;
+        this.currentSlideIndex = 0;
         this.divSlideCollection = this.createSlideCollection();
     }
 
@@ -34,7 +34,7 @@ class ImageCarousel {
         const divSlideCollection = document.createElement('div');
         divSlideCollection.classList.add('carousel-slide-collection');
         this.images.forEach((image) => divSlideCollection.appendChild(this.createSlide(image)));
-        divSlideCollection.style.left = `${this.currentSlidePosition}px`
+        divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`
 
         return divSlideCollection;
     }
@@ -79,7 +79,7 @@ class ImageCarousel {
         const divNavDotCollection = document.createElement('div');
         divNavDotCollection.classList.add('carousel-nav-dot-collection');
         for (let i = 0; i < this.images.length; i++) {
-            divNavDotCollection.appendChild(this.createNavigationDot(i * -SLIDE_WIDTH));
+            divNavDotCollection.appendChild(this.createNavigationDot(i));
         }
         
         return divNavDotCollection;
@@ -94,27 +94,27 @@ class ImageCarousel {
     }
 
     displayNextSlide() {
-        if (this.currentSlidePosition > -((this.images.length - 1) * SLIDE_WIDTH)) {
-            this.currentSlidePosition -= SLIDE_WIDTH;
+        if (this.currentSlideIndex < this.images.length - 1) {
+            this.currentSlideIndex++;
         } else {
-            this.currentSlidePosition = 0;
+            this.currentSlideIndex = 0;
         }
-        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
     }
 
     displayPreviousSlide() {
-        if (this.currentSlidePosition < 0) {
-            this.currentSlidePosition += SLIDE_WIDTH;
+        if (this.currentSlideIndex > 0) {
+            this.currentSlideIndex--;
         } else {
-            this.currentSlidePosition = -((this.images.length - 1) * SLIDE_WIDTH)
+            this.currentSlideIndex = this.images.length - 1;
         }
-        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
     }
 
     jumpToSlide(position) {
         console.log(position);
-        this.currentSlidePosition = position;
-        this.divSlideCollection.style.left = `${this.currentSlidePosition}px`;
+        this.currentSlideIndex = position;
+        this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
     }
 }
 
