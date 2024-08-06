@@ -3,6 +3,8 @@
   --hover-accent-color: lightgray;
 
   --menu-icon: url("../images/menu.svg");
+  --left-arrow: url("../images/chevron-left.svg");
+  --right-arrow: url("../images/chevron-right.svg");
 
   --dropdown-toggle-dimensions: 40px;
   --dropdown-border-radius: 10px;
@@ -122,4 +124,21 @@
 .carousel-nav-dot.selected {
     background-color: green;
     /* TODO: Programmatically toggle this class */
+}
+
+button.icon {
+    border: none;
+    background-color: black;
+    height: 25px;
+    width: 25px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.icon.back {
+    mask-image: var(--left-arrow);
+}
+
+.icon.next {
+    mask-image: var(--right-arrow);
 }

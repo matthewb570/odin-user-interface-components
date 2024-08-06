@@ -61,7 +61,6 @@ class ImageCarousel {
         const btnPreviousSlide = document.createElement('button');
         btnPreviousSlide.type = 'button';
         btnPreviousSlide.classList.add('icon', 'back');
-        btnPreviousSlide.textContent = 'Back'; // TODO: Remove this
         btnPreviousSlide.onclick = this.displayPreviousSlide.bind(this);
 
         return btnPreviousSlide;
@@ -71,7 +70,6 @@ class ImageCarousel {
         const btnNextSlide = document.createElement('button');
         btnNextSlide.type = 'button';
         btnNextSlide.classList.add('icon', 'next');
-        btnNextSlide.textContent = 'Next'; // TODO: Remove this
         btnNextSlide.onclick = this.displayNextSlide.bind(this);
 
         return btnNextSlide;
