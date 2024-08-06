@@ -73,7 +73,6 @@
 .carousel-frame {
     position: relative;
 
-    border: solid;
     height: 300px;
     width: 600px;
     overflow: hidden;
@@ -118,11 +117,16 @@
     border-radius: 10px;
     padding: 2px;
     background-clip: content-box;
-    background-color: green;
+    background-color: lightgray;
+    cursor: pointer;
 }
 
 .carousel-nav-dot.selected {
-    border: solid 2px;
+    border: solid lightgray 2px;
+}
+
+button {
+    cursor: pointer;
 }
 
 button.icon {
@@ -136,8 +140,10 @@ button.icon {
 
 .icon.back {
     mask-image: var(--left-arrow);
+    background-color: lightgray;
 }
 
 .icon.next {
     mask-image: var(--right-arrow);
+    background-color: lightgray;
 }
