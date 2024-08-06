@@ -74,79 +74,79 @@
 }
 
 .carousel-frame {
-    position: relative;
+  position: relative;
 
-    height: var(--carousel-height);
-    width: var(--carousel-width);
-    overflow: hidden;
+  height: var(--carousel-height);
+  width: var(--carousel-width);
+  overflow: hidden;
 }
 
 .carousel-slide-collection {
-    display: flex;
+  display: flex;
 
-    position: relative;
+  position: relative;
 }
 
 .carousel-slide {
-    flex: 1 0 var(--carousel-width);
+  flex: 1 0 var(--carousel-width);
 
-    height: var(--carousel-height);
+  height: var(--carousel-height);
 }
 
 .carousel-button-controls {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    height: calc(var(--carousel-height) - 10px);
-    width: calc(var(--carousel-width) - 10px);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: calc(var(--carousel-height) - 10px);
+  width: calc(var(--carousel-width) - 10px);
 }
 
 .carousel-nav-dot-collection {
-    flex: 1;
-    align-self: flex-end;
+  flex: 1;
+  align-self: flex-end;
 
-    display: flex;
-    justify-content: center;
-    gap: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .carousel-nav-dot {
-    box-sizing: border-box;
-    height: 17px;
-    width: 17px;
-    border-radius: 10px;
-    padding: 2px;
-    background-clip: content-box;
-    background-color: lightgray;
-    cursor: pointer;
+  box-sizing: border-box;
+  height: 17px;
+  width: 17px;
+  border-radius: 10px;
+  padding: 2px;
+  background-clip: content-box;
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .carousel-nav-dot.selected {
-    border: solid lightgray 2px;
+  border: solid lightgray 2px;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button.icon {
-    border: none;
-    background-color: black;
-    height: 25px;
-    width: 25px;
-    mask-repeat: no-repeat;
-    mask-position: center;
+  border: none;
+  background-color: black;
+  height: 25px;
+  width: 25px;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .icon.back {
-    mask-image: var(--left-arrow);
-    background-color: lightgray;
+  mask-image: var(--left-arrow);
+  background-color: lightgray;
 }
 
 .icon.next {
-    mask-image: var(--right-arrow);
-    background-color: lightgray;
+  mask-image: var(--right-arrow);
+  background-color: lightgray;
 }

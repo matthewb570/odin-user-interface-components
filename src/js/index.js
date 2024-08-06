@@ -16,9 +16,14 @@ const dropdown = new Dropdown("left", menuOption1, menuOption2, menuOption3);
 
 document.body.appendChild(dropdown.createDropdown());
 
-
-
-const imageCarousel = new ImageCarousel('red', 'orange', 'yellow', 'green', 'blue', 'purple');
+const imageCarousel = new ImageCarousel(
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "purple"
+);
 
 document.body.appendChild(imageCarousel.createImageCarousel());
 setInterval(() => imageCarousel.displayNextSlide(), 5000);
