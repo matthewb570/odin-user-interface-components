@@ -121,7 +121,6 @@ class ImageCarousel {
     }
 
     jumpToSlide(position) {
-        console.log(position);
         this.currentSlideIndex = position;
         this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
         this.setSelectedNavigationDot(this.currentSlideIndex);
