@@ -116,14 +116,13 @@
     height: 17px;
     width: 17px;
     border-radius: 10px;
-    border: solid 2px;
     padding: 2px;
     background-clip: content-box;
+    background-color: green;
 }
 
 .carousel-nav-dot.selected {
-    background-color: green;
-    /* TODO: Programmatically toggle this class */
+    border: solid 2px;
 }
 
 button.icon {

@@ -4,13 +4,17 @@ class ImageCarousel {
 
     images;
     currentSlideIndex;
+    navigationDotsArray;
 
     divSlideCollection;
+    divNavigationDots;
     
     constructor(...images) {
         this.images = images;
         this.currentSlideIndex = 0;
+        this.navigationDotsArray = new Array();
         this.divSlideCollection = this.createSlideCollection();
+        this.divNavigationDots = this.createNavigationDots();
     }
 
     createImageCarousel() {
@@ -51,7 +55,7 @@ class ImageCarousel {
         const divButtonControls = document.createElement('div');
         divButtonControls.classList.add('carousel-button-controls');
         divButtonControls.appendChild(this.createPreviousSlideButton());
-        divButtonControls.appendChild(this.createNavigationDots());
+        divButtonControls.appendChild(this.divNavigationDots);
         divButtonControls.appendChild(this.createNextSlideButton());
 
         return divButtonControls;
@@ -79,8 +83,11 @@ class ImageCarousel {
         const divNavDotCollection = document.createElement('div');
         divNavDotCollection.classList.add('carousel-nav-dot-collection');
         for (let i = 0; i < this.images.length; i++) {
-            divNavDotCollection.appendChild(this.createNavigationDot(i));
+            let divNavigationDot = this.createNavigationDot(i);
+            divNavDotCollection.appendChild(divNavigationDot);
+            this.navigationDotsArray.push(divNavigationDot);
         }
+        this.setSelectedNavigationDot(this.currentSlideIndex);
         
         return divNavDotCollection;
     }
@@ -100,6 +107,7 @@ class ImageCarousel {
             this.currentSlideIndex = 0;
         }
         this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
+        this.setSelectedNavigationDot(this.currentSlideIndex);
     }
 
     displayPreviousSlide() {
@@ -109,12 +117,21 @@ class ImageCarousel {
             this.currentSlideIndex = this.images.length - 1;
         }
         this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
+        this.setSelectedNavigationDot(this.currentSlideIndex);
     }
 
     jumpToSlide(position) {
         console.log(position);
         this.currentSlideIndex = position;
         this.divSlideCollection.style.left = `${this.currentSlideIndex * -SLIDE_WIDTH}px`;
+        this.setSelectedNavigationDot(this.currentSlideIndex);
+    }
+
+    setSelectedNavigationDot(indexToSelect) {
+        this.navigationDotsArray.forEach(navigationDot => {
+            navigationDot.classList.remove("selected");
+        });
+        this.navigationDotsArray[indexToSelect].classList.add("selected");
     }
 }
 
