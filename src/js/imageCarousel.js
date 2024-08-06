@@ -44,9 +44,9 @@ class ImageCarousel {
     }
 
     createSlide(image) {
-        const imgSlide = document.createElement('div'); // TODO: Replace with image
+        const imgSlide = document.createElement('div');
         imgSlide.classList.add('carousel-slide');
-        imgSlide.textContent = image;
+        imgSlide.style.backgroundColor = image;
 
         return imgSlide;
     }

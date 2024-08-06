@@ -18,7 +18,7 @@ document.body.appendChild(dropdown.createDropdown());
 
 
 
-const imageCarousel = new ImageCarousel('Frame 1', 'Frame 2', 'Frame 3');
+const imageCarousel = new ImageCarousel('red', 'orange', 'yellow', 'green', 'blue', 'purple');
 
 document.body.appendChild(imageCarousel.createImageCarousel());
 setInterval(() => imageCarousel.displayNextSlide(), 5000);
