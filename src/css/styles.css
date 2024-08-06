@@ -8,6 +8,9 @@
 
   --dropdown-toggle-dimensions: 40px;
   --dropdown-border-radius: 10px;
+
+  --carousel-width: 600px;
+  --carousel-height: 300px;
 }
 
 .dropdown {
@@ -73,8 +76,8 @@
 .carousel-frame {
     position: relative;
 
-    height: 300px;
-    width: 600px;
+    height: var(--carousel-height);
+    width: var(--carousel-width);
     overflow: hidden;
 }
 
@@ -85,9 +88,9 @@
 }
 
 .carousel-slide {
-    flex: 1 0 600px;
+    flex: 1 0 var(--carousel-width);
 
-    height: 300px;
+    height: var(--carousel-height);
 }
 
 .carousel-button-controls {
@@ -97,8 +100,8 @@
     position: absolute;
     top: 5px;
     left: 5px;
-    height: 290px;
-    width: 590px;
+    height: calc(var(--carousel-height) - 10px);
+    width: calc(var(--carousel-width) - 10px);
 }
 
 .carousel-nav-dot-collection {
